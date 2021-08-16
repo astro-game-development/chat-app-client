@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.joinContainer {
+  display: flex;
+  flex-direction: column;
+}
+.joinContainer p {
+  margin: 10px 0;
+}
+.inputStyled {
+  font-size: 20px;
+  margin: 10px 0;
+}
