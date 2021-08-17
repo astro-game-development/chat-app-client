@@ -30,18 +30,13 @@ function Chat({ location }) {
 
   useEffect(() => {
     socket.on('message', (message) => {
-      setMessages([...messages, message]);
+      setMessages((messages) => [...messages, message]);
     });
+
     socket.on('roomData', ({ users }) => {
       setUsers(users);
     });
-  }, [messages]);
-
-  useEffect(() => {
-    socket.on('message', (message) => {
-      setMessages([...messages, message]);
-    });
-  }, [messages]);
+  }, []);
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -50,7 +45,7 @@ function Chat({ location }) {
     }
   };
 
-  console.log(message, messages);
+  // console.log(message, messages);
 
   return (
     <div className="outerContainer">

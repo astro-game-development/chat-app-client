@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Input from './Input';
 import MessageBox from './MessageBox';
 import UserBox from './UserBox';
@@ -12,6 +12,15 @@ function InfoBar({
   name,
   Users,
 }) {
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   return (
     <div className="InfoBar">
       <h3>
@@ -19,16 +28,17 @@ function InfoBar({
       </h3>
       <div className="leftInnerContainer">
         <div className="message-box-contain">
-          {Users.map((e) => {
-            return <UserBox user={e.name} />;
+          {Users.map((e, i) => {
+            return <UserBox key={i} user={e.name} />;
           })}
         </div>
       </div>
       <div className="RightInnerContainer">
-        <div className="message-box-contain">
-          {messages.map((e) => {
-            return <MessageBox user={e.user} text={e.text} />;
+        <div id="messageBox" className="message-box-contain">
+          {messages.map((e, i) => {
+            return <MessageBox key={i} user={e.user} text={e.text} />;
           })}
+          <div ref={messagesEndRef} />
         </div>
         <Input
           onClick={(e) => {
