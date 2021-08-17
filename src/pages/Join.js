@@ -6,6 +6,7 @@ function Join() {
   const [room, setRoom] = useState('');
   return (
     <div className="joinContainer">
+      <p>Chat React App</p>
       <p>Join</p>
       <input
         placeholder="name"
@@ -25,7 +26,7 @@ function Join() {
       ></input>
       <Link
         onClick={(event) => (!name || !room ? event.preventDefault() : null)}
-        to={`/chat?name=${name}&room${room}`}
+        to={`/chat?name=${name}&room=${room}`}
       >
         <button type="button" className="btn btn-primary">
           Sign-in

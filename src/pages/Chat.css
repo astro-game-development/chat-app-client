@@ -1,0 +1,95 @@
+.InfoBar {
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-template-columns: 1.5fr 4fr;
+  grid-column-gap: 5px;
+}
+.InfoBar h3 {
+  padding: 10px 0;
+  background-color: #f43b86;
+  grid-column: 1 / -1;
+  color: white;
+  margin-bottom: 0;
+}
+
+.leftInnerContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.leftInnerContainer,
+.RightInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftInnerContainer {
+  border-right: 5px solid #f43b86;
+}
+
+.input-container {
+  margin-top: auto;
+  margin-bottom: 5px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-inside {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  padding-right: 50px;
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  background-color: #3d087b;
+  color: white;
+}
+
+.svg-io {
+  position: absolute;
+  color: white;
+  right: 5px;
+  cursor: pointer;
+}
+.svg-io:hover {
+  color: #f43b86;
+}
+
+.message-box-contain {
+  margin-top: 5px;
+  width: 100%;
+  height: 380px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.messagebox {
+  margin: 10px 0;
+  margin-right: 10px;
+  width: auto;
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #00c1d4;
+}
+.userbox {
+  color: #000;
+  display: flex;
+  align-items: center;
+  background-color: #ffd523;
+}
+.userbox span {
+  margin-left: 5px;
+}
+
+.messagebox b {
+  color: #fff338;
+}
