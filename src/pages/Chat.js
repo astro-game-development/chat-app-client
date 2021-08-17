@@ -17,7 +17,7 @@ function Chat({ location }) {
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-    socket = io('http://localhost:5000');
+    socket = io(process.env.REACT_APP_SOCKET_API);
     setName(name);
     setRoom(room);
     socket.emit('join', { name, room }, () => {});
